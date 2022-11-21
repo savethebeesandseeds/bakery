@@ -1,1 +1,0 @@
-main.o: lib/include/../main.cpp lib/include/server_piaabo.hpp
