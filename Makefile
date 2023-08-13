@@ -2,8 +2,8 @@ ENV := gdb-debug
 ENV := valgrind-debug
 ENV := no-debug
 
-STATIC_FLAGS := # disable static
 STATIC_FLAGS := -static # enable static
+STATIC_FLAGS := # disable static
 
 VALGRIND_TOOL=helgrind
 VALGRIND_TOOL=memcheck --leak-check=full --show-leak-kinds=all
@@ -21,7 +21,7 @@ GCC := gcc
 
 # export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
-LINKS := -lmicrohttpd 
+LINKS := -lmicrohttpd -lgnutls 
 
 ifeq ($(ENV),gdb-debug)
 GPP += -Wall -g -O0 $(STATIC_FLAGS) 
